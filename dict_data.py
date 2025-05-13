@@ -1,6 +1,6 @@
 import pandas as pd
 
+df = pd.read_csv('dictionary.csv')
 
 def get_definition(word):
-    df = pd.read_csv('dictionary.csv')
-    return df[df['word'] == word.lower()]['definition'].squeeze()
+    return df.loc[df['word'] == word.lower()]['definition'].squeeze()
